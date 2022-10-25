@@ -29,5 +29,11 @@ app.use(express.static(path.join(__dirname,'../public')));
 //rutas: nombre de dominio + ----
 // http://localhost:4000/
 app.get('/productos', (req, res)=>{
+    res.send('aqui tengo que retornar un arreglo de productos')
+})
+app.post('/productos', (req, res)=>{
     res.send('Esto es una prueba de la peticion GET')
+})
+app.get('/productos2', (req, res)=>{
+    res.send('aqui devolvemos un producto')
 })
