@@ -52,3 +52,18 @@ export const obtenerProducto = async (req, res)=>{
     })
   }
 }
+export const editarProducto = async (req, res)=>{
+  try{
+    //buscar el producto por el id, luego modificar los datos con el body
+    await Producto.findByIdAndUpdate(req.params.id,req.body);
+    //responder al frontend
+    res.status(200).json({
+      mensaje: 'El producto fue editado correctamente'
+    })
+  }catch(error){
+    console.log(error)
+    res.status(404).json({
+      mensaje: 'Error el producto solicitado no pudo ser modificado'
+    })
+  }
+}

@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { editarProducto } from "../controllers/productos.controllers";
 import { crearProducto, listarProductos, obtenerProducto } from "../controllers/productos.controllers";
 
 const router = Router();
@@ -9,7 +10,7 @@ router.route('/productos')
 
 router.route('/productos/:id')
 .get(obtenerProducto)
-// .put()
+.put(editarProducto)
 // .delete()
 
 export default router;
