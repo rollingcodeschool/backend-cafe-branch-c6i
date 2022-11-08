@@ -30,6 +30,6 @@ app.use(express.static(path.join(__dirname,'../public')));
 
 
 //rutas: nombre de dominio + ----
-// http://localhost:4000/
-app.use('/apicafe',productosRouter)
-app.use('/apicafe/auth',authRouter)
+// http://localhost:4000/apicafe/
+app.use('/apicafe',productosRouter) 
+app.use('/apicafe/auth',authRouter) 
